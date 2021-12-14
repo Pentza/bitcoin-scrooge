@@ -5,5 +5,11 @@ Bitcoin-Scrooge
 {% endblock %}
 
 {% block body %}
-Index
+<div>
+    <form method="POST">
+        {{ date_form.start_date }}
+        {{ date_form.end_date }}
+        <input type="submit" />
+    </form>
+</div>
 {% endblock %}
