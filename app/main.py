@@ -21,8 +21,9 @@ def index():
             data = coingecko_service.get_historical_market_data(start_timestamp, end_timestamp)
             daily_prices = coingecko_service.get_daily_prices(data)
             longest_bearish = coingecko_service.get_longest_bearish(daily_prices)
+            highest_volume = coingecko_service.get_highest_volume()
 
-        return render_template('results.html', date_form=date_form, daily_prices=daily_prices, longest_bearish=longest_bearish)
+        return render_template('results.html', date_form=date_form, daily_prices=daily_prices, longest_bearish=longest_bearish, highest_volume=highest_volume)
 
     return render_template('index.html', date_form=date_form)
 

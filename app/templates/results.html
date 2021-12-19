@@ -4,6 +4,7 @@
 <div>
     <p>Between {{ daily_prices[0][0] }} and {{ daily_prices[-1][0] }}</p>
     <p>Longest bearish trend was {{ longest_bearish }} days</p>
+    <p>Highest trading volume: {{ highest_volume[0] }}, {{ highest_volume[1] }}</p>
     <ul>
         {% for daily in daily_prices %}
             <li>{{ daily[0] }}, price: {{ daily[1] }}</li>
