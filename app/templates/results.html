@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block results %}
+<div>
+    <p>Between {{ daily_prices[0][0] }} and {{ daily_prices[-1][0] }}</p>
+    <p>Longest bearish trend was {{ longest_bearish }} days</p>
+    <ul>
+        {% for daily in daily_prices %}
+            <li>{{ daily[0] }}, price: {{ daily[1] }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

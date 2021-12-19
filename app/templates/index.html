@@ -9,7 +9,11 @@ Bitcoin-Scrooge
     <form method="POST">
         {{ date_form.start_date }}
         {{ date_form.end_date }}
-        <input type="submit" />
+        {{ date_form.submit }}
     </form>
 </div>
+
+{% block results %}{% endblock %}
+
 {% endblock %}
+
