@@ -24,7 +24,7 @@ def index():
 
             try:
                 graph = coingecko_service.draw_graph(data)
-            except Exception:
+            except Exception: # pylint: disable=W0703
                 graph = 'Graph currently unavailable.'
 
             best_dates = coingecko_service.calculate_best_dates(data)

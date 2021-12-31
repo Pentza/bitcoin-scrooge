@@ -107,5 +107,6 @@ class CoinGeckoService:
                 dif = dif_to_current_lowest
                 sell_date = date
                 buy_date = current_lowest[0]
-
-        return (buy_date, sell_date, dif)
+        if buy_date:
+            return (buy_date, sell_date, dif)
+        return None
