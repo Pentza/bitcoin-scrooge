@@ -1,19 +1,19 @@
 {% extends "index.html" %}
 
 {% block results %}
-<div>
-    <p>Between {{ daily_prices[0][0].strftime('%d.%m.%Y') }} and {{ daily_prices[-1][0].strftime('%d.%m.%Y') }}</p>
-    <p>Longest bearish trend was {{ longest_bearish[0] }} days and the price dropped by {{ '{:,.2f}'.format(longest_bearish[1]) }} €</p>
-    <p>Highest trading volume: {{ highest_volume[0].strftime('%d.%m.%Y') }}  -  {{ '{:,.2f}'.format(highest_volume[1]) }} €</p>
+<div class="d-flex flex-column align-items-center">
+    <div class="p-2">Between {{ daily_prices[0][0].strftime('%d.%m.%Y') }} and {{ daily_prices[-1][0].strftime('%d.%m.%Y') }}</div>
+    <div class="p-2">Longest bearish trend was {{ longest_bearish[0] }} days and the price dropped by {{ '{:,.2f}'.format(longest_bearish[1]) }} €</div>
+    <div class="p-2">Highest trading volume: {{ highest_volume[0].strftime('%d.%m.%Y') }}  -  {{ '{:,.2f}'.format(highest_volume[1]) }} €</div>
     {% if best_dates %}
-        <p>Buy: {{ best_dates[0].strftime('%d.%m.%Y') }}</p>
-        <p>Sell: {{ best_dates[1].strftime('%d.%m.%Y') }}</p>
-        <p>Profit: {{ '{0:,.2f}'.format(best_dates[2]) }} €</p>
+        <div class="p-2">Buy: {{ best_dates[0].strftime('%d.%m.%Y') }}</div>
+        <div class="p-2">Sell: {{ best_dates[1].strftime('%d.%m.%Y') }}</div>
+        <div class="p-2">Profit: {{ '{0:,.2f}'.format(best_dates[2]) }} €</div>
     {% else %}
-        <p>Don't buy or sell during this time</p>
+        <div class="p-2">Don't buy or sell during this time</div>
     {% endif %}
 </div>
-<div>
+<div class="d-flex flex-column align-items-center">
     {{ graph|safe }}
 </div>
 {% endblock %}
